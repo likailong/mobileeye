@@ -14,6 +14,9 @@ namespace :db do
                    email: email,
                    password: password,
                    password_confirmation: password)
+    Livevideo.create!(information: "街舞表演",
+		      location: "dongchuanlu",
+		      url: "http://192.168.12.178:3000")
     end
   end
 end

@@ -1,0 +1,13 @@
+<script  type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=AA50c6765a5a346c22348295adca7877"></script>
+
+<script type="text/javascript" >
+   var bm_center = new BMap.Point(121.44,31.21)
+   var map = new BMap.Map("map_canvas");
+   map.centerAndZoom(bm_center, 11);
+   map.addControl(new BMap.NavigationControl());
+   map.addControl(new BMap.ScaleControl());
+   map.addControl(new BMap.OverviewMapControl());
+   map.addControl(new BMap.MapTypeControl());
+   map.enableScrollWheelZoom();
+</script>
+

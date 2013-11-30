@@ -191,7 +191,54 @@ input {
 }
 
 #map_canvas{
-  width: 500px; 
-  height: 400px; 
-  float: right;
+  width: 700px; 
+  height: 500px; 
+}
+
+.list{
+  display: block;
+  position: absolute;
+  left: 880px;
+  top: 130px;
+  height: 450px;
+}
+
+.livevideos{
+  list-style: none;
+  margin: 10px 0 0 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.information {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+
+.createvideo{
+  position: absolute;
+  left: 40px;
+  top: 30px;
+}
+
+.description{
+  position: absolute;
+  left: 380px;
+  top: 60px;
+  width: 240px;
+}
+.location{
+  position: absolute;
+  left: 650px;
+  top: 60px;
+  width: 180px;
+}
+.createsubmit{
+  position: absolute;
+  left: 880px;
+  top: 60px;
 }

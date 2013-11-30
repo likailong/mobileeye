@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @livevideo = Livevideo.new if signed_in?
   end
 
   def help

@@ -1,0 +1,14 @@
+<%= will_paginate @livevideos%>
+
+<li>
+  <span class="information">
+    <%= link_to livevideo.information, livevideo.url %>
+  </span>
+  <span class="information"><%= livevideo.location %></span>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(livevideo.created_at) %> ago.
+  </span>
+  <%= link_to "delete", livevideo, method: :delete, data: { confirm: "You sure?" }, title: livevideo.information %>
+</li>
+
+<%= will_paginate @livevideos%>

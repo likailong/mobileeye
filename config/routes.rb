@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  resources :livevideos, only:[:create, :destroy]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'static_pages#home'
@@ -8,6 +9,7 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
