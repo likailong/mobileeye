@@ -1,14 +1,22 @@
 class LivevideosController < ApplicationController
   before_action :signed_in_user
-
+  require 'open-uri' 
+  
   def create
     @livevideo = Livevideo.new(livevideo_params)
     @livevideo.url =  "http://10.187.248.226:8080/#" + newpass(10)
+    url = "http://api.map.baidu.com/geocoder/v2/?address=%s&output=json&ak=AA50c6765a5a346c22348295adca7877&city=上海市" % ("交大闵行校区" + @livevideo.location)
+    url_escape = URI::escape(url) 
+    content = open(url_escape).read 
+    content_parsed = JSON.parse(content)
+    @livevideo.lng =  content_parsed["result"]["location"]["lng"]
+    @livevideo.lat =  content_parsed["result"]["location"]["lat"]
+    @livevideos = Livevideo.all
     if @livevideo.save
-      flash[:success] = "Live Video Created!"
+      flash[:success] = "Live Video Created Successful!"      
       redirect_to current_user
     else
-      render 'static_pages/home'
+      redirect_to current_user
     end
   end
 

@@ -1,6 +1,6 @@
 <%= form_for(@livevideo) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-    <%= f.text_area :information, placeholder: "Description for Livevideo...", class: "description" %>
-    <%= f.text_area :location, placeholder: "Location for Livevideo...", class: "location" %>
+    <%= f.text_field :information, placeholder: "Description for Livevideo...", class: "description" %>
+    <div class= "location"><%= f.select :location, [["第一餐饮大楼", "第一餐饮大楼"], ["第二餐饮大楼", "第二餐饮大楼"]], :prompt => "请选择地点" %></div>
   <%= f.submit "Create Live video", class: "btn btn-large btn-primary createsubmit" %>
 <% end %>

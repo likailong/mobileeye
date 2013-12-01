@@ -193,6 +193,10 @@ input {
 #map_canvas{
   width: 700px; 
   height: 500px; 
+  top: 10px;
+}
+.flash{
+  width: 200px;
 }
 
 .list{
@@ -221,24 +225,28 @@ input {
 
 .createvideo{
   position: absolute;
-  left: 40px;
-  top: 30px;
+  left: 440px;
+  top: 40px;
+  width: 650px;
+  height: 55px;
+  background-color:  $grayLighter;
 }
+
 
 .description{
   position: absolute;
-  left: 380px;
-  top: 60px;
+  left: 20px;
   width: 240px;
+  top: 10px;
 }
 .location{
   position: absolute;
-  left: 650px;
-  top: 60px;
+  left: 270px;
   width: 180px;
+  top: 10px;
 }
 .createsubmit{
   position: absolute;
-  left: 880px;
-  top: 60px;
+  left: 460px;
+  top: 5px;
 }

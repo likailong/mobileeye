@@ -1,13 +1,28 @@
 <script  type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=AA50c6765a5a346c22348295adca7877"></script>
 
 <script type="text/javascript" >
-   var bm_center = new BMap.Point(121.44,31.21)
-   var map = new BMap.Map("map_canvas");
-   map.centerAndZoom(bm_center, 11);
+   var bm_center = new BMap.Point(121.441588,31.03261)
+   var map = new BMap.Map("map_canvas",{mapType: BMAP_HYBRID_MAP});
+   map.centerAndZoom(bm_center, 16);
    map.addControl(new BMap.NavigationControl());
    map.addControl(new BMap.ScaleControl());
    map.addControl(new BMap.OverviewMapControl());
    map.addControl(new BMap.MapTypeControl());
    map.enableScrollWheelZoom();
+
+   var locations =  <%= @livevideos.to_json.html_safe %>;
+   var locNum = locations.length; 
+   var marker = new Array(locNum); 
+   var contentString ;
+   for (i=0; i<locNum; ++i){ 
+     marker[i] = new BMap.Marker(new BMap.Point(parseFloat(locations[i]["lng"]), parseFloat(locations[i]["lat"]))); 
+     map.addOverlay(marker[i]);
+     lan(marker[i],i);
+     marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); 
+   }
+   function lan(mypt,i){
+     var ifonWin = new BMap.InfoWindow('<a href=' + locations[i]["url"] + '>' +  locations[i]["information"] + '</a>');
+     mypt.addEventListener("click", function(){this.openInfoWindow(ifonWin);});
+   }
 </script>
 
