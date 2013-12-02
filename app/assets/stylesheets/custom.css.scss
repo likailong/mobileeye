@@ -201,9 +201,9 @@ input {
 
 .list{
   display: block;
-  position: absolute;
-  left: 880px;
-  top: 130px;
+  position: relative;
+  left: 10px;
+  top: 5px;
   height: 450px;
 }
 
@@ -224,11 +224,10 @@ input {
 }
 
 .createvideo{
-  position: absolute;
-  left: 440px;
-  top: 40px;
-  width: 650px;
+  position: relative;
+  top: -10px;
   height: 55px;
+  width: 650px;
   background-color:  $grayLighter;
 }
 
@@ -249,4 +248,8 @@ input {
   position: absolute;
   left: 460px;
   top: 5px;
+}
+
+.homesignup{
+  left: 20px;
 }

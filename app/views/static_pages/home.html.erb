@@ -1,17 +1,12 @@
   <div class="center hero-unit">
-    <h1>Welcome to the Mobile Eye</h1>
+    <h1>Welcome to the MOBILE EYE </h1>
 
     <h2>
       This is the home page for the first
       <a href="http://www.sjtuhuaweiclub.com/">SJTU HuaWei</a>
       app challenge.
     </h2>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-    <span style="padding:40px"></span>
-    <%= link_to "Sign in!", signin_path, class: "btn btn-large btn-primary" %> 
+    <%= image_tag("logo1.png", alt: "mobile eye logo") %>
+   <h3 style=" font-size: 1px;"><%= link_to "Sign in now!", signin_path, class: "btn btn-big btn-flat", disabled: true %> </h3> <p  style=" font-size: 5px;">New user? <%= link_to "Sign up now!", signup_path %></p> 
   </div>
 
-  <%= image_tag("logo3.jpg", alt: "mobile eye logo") %>
-  <span style="padding:10px"></span>
-  <%= image_tag("huaweisjtulogo.jpg", alt: "sjtu huawei logo") %>

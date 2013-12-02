@@ -1,18 +1,24 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<table width="100%">
+<tr>
+<td colspan="1" >
+<div >
+  <%= gravatar_for @user %>
+  <%= @user.name %>
 </div>
+</td>
+<td colspan="4" align="right">
 <div class="createvideo"><%= render 'shared/livevideo_form' %></div>
-
+</td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td colspan="4">
 <div id="map_canvas"><%= render 'shared/map_canvas' %></div>
+</td>
 
+<td colspan = "1">
 <div class="list">
   <% if Livevideo.any? %>
     <h3>Live Videos (<%= Livevideo.count %>)</h3>
@@ -22,4 +28,9 @@
     <%= will_paginate @livevideos %>
   <% end %>
 </div>
+
+</td>
+</tr>
+</table>
+
 
